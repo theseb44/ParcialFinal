@@ -3,10 +3,10 @@
     <span class="text-cuaternario text-4xl font-bold">Logo</span>
 
     <ul class="flex items-center gap-5 text-cuaternario text-2xl font-bold">
-      <li class="hover:text-gray-500 cursor-pointer">Inicio</li>
-      <li class="hover:text-gray-500 cursor-pointer">Pahiuen</li>
-      <li class="hover:text-gray-500 cursor-pointer">Contactos</li>
-      <li class="hover:text-gray-500 cursor-pointer">Que hacemos</li>
+      <li class="hover:text-gray-500 cursor-pointer"><a href="#seccion-1">Inicio</a></li>
+      <li class="hover:text-gray-500 cursor-pointer"><a href="#seccion-2">Pahiuen</a></li>
+      <li class="hover:text-gray-500 cursor-pointer"><a href="#seccion-4">Contactos</a></li>
+      <li class="hover:text-gray-500 cursor-pointer"><a href="#seccion-3">Que hacemos</a></li>
     </ul>
   </nav>
 </template>
