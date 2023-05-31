@@ -1,47 +1,63 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
+<script setup></script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
+    <!-- Componente Navbar -->
   </header>
 
-  <main>
-    <TheWelcome />
-  </main>
+  <!-- Primera seccion -->
+  <section>
+    <!-- Componente de la primera seccion -->
+  </section>
+  <!-- Cierre Primera seccion -->
+
+  <!-- Segunda seccion -->
+  <section>
+    <article>
+      <h2>NOSOTROS</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, totam alias dolore corporis
+        libero natus aut quisquam cumque fugit non voluptatibus accusantium, quia similique eligendi
+        tempora! Mollitia odio facere fugit.
+      </p>
+    </article>
+    <article>
+      <!-- Dos componentes de imagenes -->
+    </article>
+  </section>
+  <!-- Cierre Segunda seccion -->
+
+  <!-- Tercera seccion -->
+  <section>
+    <header><h2>NUESTROS SERVICIOS</h2></header>
+    <!-- Cuatro componentes de cartas para mostrar servicios -->
+  </section>
+  <!-- Cierre tercera seccion -->
+
+  <!-- Cuarta seccion -->
+  <section>
+    <div>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur facilis temporibus
+        natus totam beatae eligendi ipsa cum alias sint asperiores aliquam dolorem blanditiis et
+        voluptatem, sapiente, ipsam itaque. Quasi, unde.
+      </p>
+    </div>
+    <div>
+      <form action="#">
+        <span>
+          Entreganos los datos relevantas para tu consulta y te responderemos lo antes posible
+        </span>
+        <input type="text" placeholder="Nombre...">
+        <input type="email" placeholder="Email...">
+        <input type="text" placeholder="Telefono...">
+        <textarea cols="30" rows="10" placeholder="...que buscas?"></textarea>
+      </form>
+    </div>
+    <div>
+      <!-- Informacion de contacto -->
+    </div>
+  </section>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
+<style scoped></style>
