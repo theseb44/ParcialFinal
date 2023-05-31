@@ -1,15 +1,7 @@
 const personaModel = require("../models/PersonaSchema")
 
-/*
-const buscar = async (json)=> {
-    const { personaId } = json;
 
-    const personabd = await personaModel.findOne({ personaId });
-    if (personabd !== null) {
-      return true
-    }
-    return false;
-}*/
+
 
 
 const getAllPersonas = async(req, res)=> {
@@ -28,8 +20,9 @@ const getAllPersonas = async(req, res)=> {
 const getPersona = async(req,res) => {
 
     try {
-        const {id:paramId} = req.params
-        const persona = await personaModel.findOne({ personaId:paramId })
+        const {id:personaId} = req.params
+        const persona = await personaModel.findOne({ _id:personaId })
+        if(persona === null){return res.status(404).json({msg:"no se encontro"})}
         res.status(200).json({persona})
     } catch (error) {
         res.status(500).json({
@@ -56,8 +49,8 @@ const createPersona = async (req, res) => {
 const updatePersona = async (req, res) => {
 
     try {
-        const {id:paramsId} = req.params
-        await personaModel.findOneAndUpdate({personaId:paramsId }, req.body, {
+        const {id:personaId} = req.params
+        await personaModel.findOneAndUpdate({_id:personaId }, req.body, {
             new: true,
             runValidators: true
         })
@@ -75,8 +68,8 @@ const updatePersona = async (req, res) => {
 const deletePersona = async (req, res)=>{
 
     try {
-        const {id:paramsId} = req.params
-        await personaModel.findOneAndDelete({personaId:paramsId })
+        const {id:personaId} = req.params
+        await personaModel.findOneAndDelete({_id:personaId })
         res.status(200).json({
             msg:"se elimino correctamente"
         })
