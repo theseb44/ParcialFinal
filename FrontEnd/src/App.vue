@@ -2,6 +2,7 @@
 import Navbar from './components/Navbar.vue'
 import About from './components/About.vue';
 import Contactos from './components/Contactos.vue'
+import Card from './components/Card.vue';
 </script>
 
 <template>
@@ -36,10 +37,22 @@ import Contactos from './components/Contactos.vue'
   <!-- Cierre Segunda seccion -->
 
   <!-- Tercera seccion -->
-  <section class="bg-yellow-200 h-[50vh]" id="seccion-3">
-    <header><h2>NUESTROS SERVICIOS</h2></header>
-    <!-- Cuatro componentes de cartas para mostrar servicios -->
-  </section>
+  <section class="bg-[#D9D9D9] h-[50vh]">
+
+<h2 class="border-b-2 mx-56 border-black text-center text-[32px] font-bold mb-8">NUESTROS SERVICIOS</h2>
+
+<div class="flex space-x-6  justify-center items-center ">
+
+  <card urlImg="/public/logos/family.svg" texto="Lorem ipsum dolor sit amet consectetur Aenean"></card>
+
+  <card urlImg="/public/logos/salto.svg" texto="Lorem ipsum dolor sit amet consectetur Aenean"></card>
+
+  <card urlImg="/public/logos/chat.svg" texto="Lorem ipsum dolor sit amet consectetur Aenean"></card>
+
+  <card urlImg="/public/logos/law.svg" texto="Lorem ipsum dolor sit amet consectetur Aenean"></card>
+
+</div>
+</section>
   <!-- Cierre tercera seccion -->
 
   <!-- Cuarta seccion -->
