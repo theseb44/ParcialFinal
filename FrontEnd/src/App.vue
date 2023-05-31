@@ -1,8 +1,10 @@
-<script setup></script>
+<script setup>
+import Navbar from './components/Navbar.vue';
+</script>
 
 <template>
   <header>
-    <!-- Componente Navbar -->
+    <Navbar/>
   </header>
 
   <!-- Primera seccion -->
