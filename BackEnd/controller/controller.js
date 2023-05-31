@@ -1,6 +1,15 @@
 const personaModel = require("../models/PersonaSchema")
 
+/*
+const buscar = async (json)=> {
+    const { personaId } = json;
 
+    const personabd = await personaModel.findOne({ personaId });
+    if (personabd !== null) {
+      return true
+    }
+    return false;
+}*/
 
 
 const getAllPersonas = async(req, res)=> {
@@ -19,8 +28,8 @@ const getAllPersonas = async(req, res)=> {
 const getPersona = async(req,res) => {
 
     try {
-        const {id:personaId} = req.params
-        const persona = await personaModel.findOne({ _id:personaId })
+        const {id:paramId} = req.params
+        const persona = await personaModel.findOne({ personaId:paramId })
         res.status(200).json({persona})
     } catch (error) {
         res.status(500).json({
@@ -32,6 +41,7 @@ const getPersona = async(req,res) => {
 const createPersona = async (req, res) => {
 
     try {
+        
         await personaModel.create(req.body)
         res.status(200).json({
             msg:"creacion exitosa"
@@ -46,27 +56,27 @@ const createPersona = async (req, res) => {
 const updatePersona = async (req, res) => {
 
     try {
-        const {id:personaId} = req.params
-        await personaModel.findOneAndUpdate({_id:personaId }, req.body, {
+        const {id:paramsId} = req.params
+        await personaModel.findOneAndUpdate({personaId:paramsId }, req.body, {
             new: true,
             runValidators: true
         })
 
         res.status(200).json({
-            msg: "se actualizo correctamente"
+            msg:"actualizacion exitosa"
         })
     } catch (error) {
-        res.status.json({
+        res.status(200).json({
             msg:`ocurrio un error al actualizar ${error}`
         })
     }
 }
 
-const deletePersona = async (req, res) =>{
+const deletePersona = async (req, res)=>{
 
     try {
-        const {id:personaId} = req.params
-        await personaModel.findOneAndDelete({ _id:personaId })
+        const {id:paramsId} = req.params
+        await personaModel.findOneAndDelete({personaId:paramsId })
         res.status(200).json({
             msg:"se elimino correctamente"
         })

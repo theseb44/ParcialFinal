@@ -1,8 +1,14 @@
 const { default: mongoose } = require("mongoose");
+const {Schema} = require("mongoose")
 
 
 const personaSchema = new mongoose.Schema({
 
+    personaId: {
+        type: String,
+        required: true,
+        unique: true,
+    },
     name: {
         type: String,
         required: true
