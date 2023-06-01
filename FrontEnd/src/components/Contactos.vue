@@ -8,7 +8,7 @@
       </p>
     </div>
     <div class="w-[33.5%] p-4">
-      <form class="flex flex-col gap-2 bg-[#28DB24] h-full p-8 rounded-xl" action="#">
+      <form class="flex flex-col gap-2 bg-principal h-full p-8 rounded-xl" action="#">
         <span class="text-white text-lg">
           Entreganos los datos relevantes para tu consulta y te responderemos lo antes posible
         </span>
