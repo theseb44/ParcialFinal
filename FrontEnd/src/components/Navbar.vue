@@ -18,7 +18,7 @@
       <li
         class="text-white cursor-pointer bg-gradient-to-r from-orange-300 to-yellow-300 py-1 px-3 rounded-lg"
       >
-        <a class="" href="#">Intranet</a>
+        <router-Link to="/intranet">Intranet</router-Link>
       </li>
     </ul>
   </nav>
