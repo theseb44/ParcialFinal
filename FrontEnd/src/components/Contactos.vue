@@ -8,21 +8,46 @@
       </p>
     </div>
     <div class="w-[33.5%] p-4">
-      <form class="flex flex-col gap-2 bg-principal h-full p-8 rounded-xl" action="#">
+      <article class="flex flex-col gap-2 bg-principal h-full p-8 rounded-xl">
         <span class="text-white text-lg">
           Entreganos los datos relevantes para tu consulta y te responderemos lo antes posible
         </span>
-        <input class="py-2 px-4 rounded-lg bg-slate-50" type="text" placeholder="Nombre..." />
-        <input class="py-2 px-4 rounded-lg bg-slate-50" type="email" placeholder="Email..." />
-        <input class="py-2 px-4 rounded-lg bg-slate-50" type="text" placeholder="Telefono..." />
+        <input
+          class="py-2 px-4 rounded-lg bg-slate-50"
+          type="text"
+          placeholder="Nombre..."
+          v-model="name"
+          required
+        />
+        <input
+          class="py-2 px-4 rounded-lg bg-slate-50"
+          type="email"
+          placeholder="Email..."
+          v-model="email"
+          required
+        />
+        <input
+          class="py-2 px-4 rounded-lg bg-slate-50"
+          type="text"
+          placeholder="Telefono..."
+          v-model="cel"
+          required
+        />
         <textarea
           class="py-2 px-4 rounded-lg bg-slate-50"
           cols="30"
           rows="3"
           placeholder="...que buscas?"
+          v-model="descripcion"
+          required
         ></textarea>
-        <button class="self-start bg-black text-white py-2 px-6 rounded-3xl mt-4">Enviar</button>
-      </form>
+        <button
+          class="self-start bg-black text-white py-2 px-6 rounded-3xl mt-4"
+          @click="enviarInfo"
+        >
+          Enviar
+        </button>
+      </article>
     </div>
     <div class="w-[33.5%] flex flex-col items-center pt-8">
       <h3 class="text-[36px] text-white border-b-2 w-[450px] text-center">
@@ -38,6 +63,28 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script setup>
+import { ref } from 'vue'
+import { createPersona } from '../services/PersonaServices'
+
+let name = ref('')
+let cel = ref('')
+let email = ref('')
+let descripcion = ref('')
+
+function enviarInfo() {
+  const Persona = {
+    name: name.value,
+    cel: cel.value,
+    email: email.value,
+    descripcion: descripcion.value
+  }
+  createPersona(Persona)
+  name.value = ''
+  cel.value = ''
+  email.value = ''
+  descripcion.value = ''
+}
+</script>
 
 <style scoped></style>
